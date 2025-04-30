@@ -1,0 +1,43 @@
+<h2 style="text-align: center; color: #2c3e50; font-family: Arial, sans-serif;">Admin Dashboard</h2>
+
+<!-- Button to navigate to Test Creation Page -->
+<div style="text-align: center; margin-bottom: 20px;">
+  <button (click)="navigateToCreateTest()" 
+    style="background-color: #3498db; color: white; padding: 10px 20px; border: none; 
+    border-radius: 5px; font-size: 16px; cursor: pointer; transition: 0.3s;">
+    Create a Test
+  </button>
+</div>
+
+<!-- Display Student Score Statistics -->
+<div style="text-align: center; font-size: 18px; margin-bottom: 20px;">
+  <p><strong>Total Students Attempted:</strong> {{ totalStudents }}</p>
+  <p><strong>Highest Score:</strong> {{ highestScore }}</p>
+  <p><strong>Lowest Score:</strong> {{ lowestScore }}</p>
+</div>
+
+<!-- Display All Quiz Questions -->
+<h3 style="text-align: center; color: #34495e; font-family: Arial, sans-serif;">All Quiz Questions</h3>
+
+<div style="display: flex; justify-content: center;">
+  <table border="1" style="width: 80%; border-collapse: collapse; text-align: center; 
+    font-family: Arial, sans-serif; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+    <tr style="background-color: #2c3e50; color: white;">
+      <th style="padding: 12px;">Question</th>
+      <th style="padding: 12px;">Options</th>
+      <th style="padding: 12px;">Correct Answer</th>
+      <th style="padding: 12px;">Actions</th>
+    </tr>
+    <tr *ngFor="let q of questions" style="background-color: #ecf0f1; transition: 0.3s;">
+      <td style="padding: 10px; border-bottom: 1px solid #bdc3c7;">{{ q.question }}</td>
+      <td style="padding: 10px; border-bottom: 1px solid #bdc3c7;">
+        {{ q.option1 }}, {{ q.option2 }}, {{ q.option3 }}, {{ q.option4 }}
+      </td>
+      <td style="padding: 10px; border-bottom: 1px solid #bdc3c7;">{{ q.correct_answer }}</td>
+      <td style="padding: 10px; border-bottom: 1px solid #bdc3c7;">
+        <button (click)="updateQuestion(q.id)" style="background-color: #f39c12; color: white; padding: 5px 10px; border: none; cursor: pointer;">Update</button>
+        <button (click)="deleteQuestion(q.id)" style="background-color: #e74c3c; color: white; padding: 5px 10px; border: none; cursor: pointer; margin-left: 5px;">Delete</button>
+      </td>
+    </tr>
+  </table>
+</div>

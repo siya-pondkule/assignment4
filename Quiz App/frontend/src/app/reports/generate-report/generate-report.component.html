@@ -1,0 +1,26 @@
+<h2 style="text-align: center; color: #2c3e50; font-family: Arial, sans-serif; margin-bottom: 20px;">
+    Generated Report
+  </h2>
+  
+  <div style="display: flex; justify-content: center;">
+    <table border="1" 
+      style="width: 80%; border-collapse: collapse; text-align: center; font-family: Arial, sans-serif; 
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); background-color: #ecf0f1;">
+      
+      <tr style="background-color: #2c3e50; color: white;">
+        <th style="padding: 12px; border: 1px solid #bdc3c7;">Question</th>
+        <th style="padding: 12px; border: 1px solid #bdc3c7;">Options</th>
+        <th style="padding: 12px; border: 1px solid #bdc3c7;">Correct Answer</th>
+      </tr>
+  
+      <tr *ngFor="let question of questions" 
+        style="background-color: white; transition: 0.3s; border-bottom: 1px solid #bdc3c7;">
+        <td style="padding: 10px; border-right: 1px solid #bdc3c7;">{{ question.question }}</td>
+        <td style="padding: 10px; border-right: 1px solid #bdc3c7;">
+          {{ question.option1 }}, {{ question.option2 }}, {{ question.option3 }}, {{ question.option4 }}
+        </td>
+        <td style="padding: 10px;">{{ question.correct_answer }}</td>
+      </tr>
+    </table>
+  </div>
+  

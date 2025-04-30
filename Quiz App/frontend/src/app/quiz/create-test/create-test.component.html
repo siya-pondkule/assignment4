@@ -1,0 +1,63 @@
+<h2 style="text-align: center; color: #2c3e50; font-family: Arial, sans-serif;">Create a Quiz</h2>
+
+<form (submit)="addQuestion()" style="max-width: 500px; margin: auto; background: #ecf0f1; 
+  padding: 20px; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
+  
+  <input type="text" placeholder="Enter Question" [(ngModel)]="question" name="question" required 
+    style="width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #bdc3c7; 
+    border-radius: 5px; font-size: 16px;">
+
+  <input type="text" placeholder="Option 1" [(ngModel)]="option1" name="option1" required 
+    style="width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #bdc3c7; 
+    border-radius: 5px; font-size: 16px;">
+
+  <input type="text" placeholder="Option 2" [(ngModel)]="option2" name="option2" required 
+    style="width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #bdc3c7; 
+    border-radius: 5px; font-size: 16px;">
+
+  <input type="text" placeholder="Option 3" [(ngModel)]="option3" name="option3" required 
+    style="width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #bdc3c7; 
+    border-radius: 5px; font-size: 16px;">
+
+  <input type="text" placeholder="Option 4" [(ngModel)]="option4" name="option4" required 
+    style="width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #bdc3c7; 
+    border-radius: 5px; font-size: 16px;">
+
+  <input type="text" placeholder="Correct Answer" [(ngModel)]="correctAnswer" name="correctAnswer" required 
+    style="width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #bdc3c7; 
+    border-radius: 5px; font-size: 16px;">
+
+  <!-- Upload Image -->
+  <input type="file" (change)="onFileSelected($event)" 
+    style="width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #bdc3c7; 
+    border-radius: 5px; font-size: 16px; background: white;">
+
+  <button type="submit" 
+    style="width: 100%; background-color: #27ae60; color: white; padding: 12px; 
+    border: none; border-radius: 5px; font-size: 18px; font-weight: bold; cursor: pointer; 
+    transition: 0.3s; margin-top: 10px;">
+    Add Question
+  </button>
+</form>
+
+<h3 style="text-align: center; color: #34495e; font-family: Arial, sans-serif; margin-top: 20px;">
+  Question Bank
+</h3>
+
+<ul style="max-width: 500px; margin: auto; background: #ecf0f1; padding: 15px; 
+  border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); list-style: none;">
+  <li *ngFor="let q of questions" 
+    style="background: white; padding: 10px; margin: 5px 0; border-radius: 5px; 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); font-size: 16px;">
+    {{ q.question }}
+  </li>
+</ul>
+
+<div style="text-align: center; margin-top: 20px;">
+  <button (click)="saveQuiz()" 
+    style="background-color: #3498db; color: white; padding: 12px 24px; border: none; 
+    border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; 
+    transition: 0.3s; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);">
+    Save Quiz
+  </button>
+</div>

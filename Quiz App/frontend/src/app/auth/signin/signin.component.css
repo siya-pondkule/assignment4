@@ -1,0 +1,107 @@
+/* Full Page Background */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Centering Form with Glassmorphism Effect */
+.auth-container {
+    background: rgba(194, 9, 9, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 15px;
+    padding: 30px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    color: blue;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Form Inputs */
+.auth-container input, 
+.auth-container select {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.3);
+    color: blue;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Input Focus Effect */
+.auth-container input:focus, 
+.auth-container select:focus {
+    background: rgba(239, 211, 211, 0.5);
+    transform: scale(1.05);
+}
+
+/* Placeholder Styling */
+::placeholder {
+    color: rgba(6, 6, 6, 0.8);
+    font-weight: bold;
+}
+
+/* Submit Button */
+.auth-container button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    background: linear-gradient(135deg, #ff512f, #dd2476);
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.auth-container button[type="submit"]:hover {
+    background: linear-gradient(135deg, #dd2476, #ff512f);
+    transform: scale(1.05);
+}
+
+/* Navigation Buttons */
+.nav-button {
+    background: none;
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 15px;
+    border: none;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-button:hover {
+    color: #ff9800;
+    transform: scale(1.1);
+}
+
+/* Small Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.auth-container {
+    animation: fadeIn 0.6s ease-in-out;
+}

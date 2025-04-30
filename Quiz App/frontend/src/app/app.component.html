@@ -1,0 +1,43 @@
+<nav style="background-color: #2c3e50; padding: 15px; text-align: center;">
+  <ul style="list-style: none; margin: 0; padding: 0; display: flex; justify-content: center;">
+    <li style="margin: 0 15px;">
+      <a routerLink="/signup" 
+        style="text-decoration: none; color: white; font-size: 18px; font-weight: bold; padding: 10px 15px; 
+        border-radius: 5px; transition: 0.3s;">
+        Sign Up
+      </a>
+    </li>
+    <li style="margin: 0 15px;">
+      <a routerLink="/signin" 
+        style="text-decoration: none; color: white; font-size: 18px; font-weight: bold; padding: 10px 15px; 
+        border-radius: 5px; transition: 0.3s;">
+        Sign In
+      </a>
+    </li>
+    <li style="margin: 0 15px;" *ngIf="isLoggedIn">
+      <button (click)="signOut()"
+        style="background: transparent; border: none; color: white; font-size: 18px; font-weight: bold; 
+               padding: 10px 15px; border-radius: 5px; cursor: pointer; transition: 0.3s;">
+        Sign Out
+      </button>
+    </li>
+  </ul>
+</nav>
+
+<!-- Router Outlet for rendering components dynamically -->
+<router-outlet></router-outlet>
+
+<script>
+  // Adding hover effects using JavaScript to maintain inline styles
+  document.querySelectorAll("nav a, nav button").forEach(link => {
+    link.addEventListener("mouseover", () => {
+      link.style.backgroundColor = "#1abc9c";
+      link.style.color = "#2c3e50";
+    });
+
+    link.addEventListener("mouseout", () => {
+      link.style.backgroundColor = "transparent";
+      link.style.color = "white";
+    });
+  });
+</script>
